@@ -1,0 +1,26 @@
+nav a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 20px;
+}
+
+nav a:hover {
+  cursor: pointer;
+  color: #ef5b6b;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* utility */
+.bg-blue {
+  background-color: #00427D;
+}
