@@ -1,0 +1,190 @@
+[
+  {
+    "title": "Corso per Licenza di Detenzione Fuochi artificiali della IV e V categoria gruppo C,D,E",
+    "category": "Online",
+    "product": "Fuochi artificiali",
+    "description": "Corso che viene effettuato online tramite piattaforme di videochiamata. Il corso tratterà degli argomenti che occorrono per poter sostenere l'esame finale in prefettura, l'alunno verrà fornito di tutto il materiale necessario per poter studiare anche autonomamente oltre alle lezioni. Il corso si terrà 3 volte a settimana in accordi con il cliente, tramite appuntamenti di circa 1 ora, nella quale si affronteranno i vari argomenti, si faranno dei quiz ed eventuali dimostrazioni.",
+    "duration": 50,
+    "price": 1000,
+    "isAvailable": true,
+    "prefecture": "Udine",
+    "typeOfExam": "Orale",
+    "teachers": [
+      "Mariano",
+      "Vittorio",
+      "Arturo"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/udine/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 1,
+    "createdAt": "2026-01-15T12:37:17.093Z",
+    "updatedAt": "2026-01-15T12:37:17.093Z"
+  },
+  {
+    "title": "Corso per Licenza di Detenzione Armi e munizioni della V categoria gruppo A",
+    "category": "Online",
+    "product": "Armi",
+    "description": "Corso che viene effettuato online tramite piattaforme di videochiamata. Il corso tratterà degli argomenti che occorrono per poter sostenere l'esame finale in prefettura, l'alunno verrà fornito di tutto il materiale necessario per poter studiare anche autonomamente oltre alle lezioni. Il corso si terrà 3 volte a settimana in accordi con il cliente, tramite appuntamenti di circa 1 ora, nella quale si affronteranno i vari argomenti, si faranno dei quiz ed eventuali dimostrazioni.",
+    "duration": 30,
+    "price": 1000,
+    "isAvailable": true,
+    "prefecture": "Roma",
+    "typeOfExam": "Scritto",
+    "teachers": [
+      "Mariano",
+      "Arturo"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/roma/altri-servizi-prefettura",
+    "id": 2,
+    "createdAt": "2026-01-15T12:39:01.175Z",
+    "updatedAt": "2026-01-15T12:39:01.175Z"
+  },
+  {
+    "title": "Corso per Licenza di Detenzione Polveri della I categoria",
+    "category": "Online",
+    "product": "Polveri",
+    "description": "Corso che viene effettuato online tramite piattaforme di videochiamata. Il corso tratterà degli argomenti che occorrono per poter sostenere l'esame finale in prefettura, l'alunno verrà fornito di tutto il materiale necessario per poter studiare anche autonomamente oltre alle lezioni. Il corso si terrà 3 volte a settimana in accordi con il cliente, tramite appuntamenti di circa 1 ora, nella quale si affronteranno i vari argomenti, si faranno dei quiz ed eventuali dimostrazioni.",
+    "duration": 100,
+    "price": 2000,
+    "isAvailable": true,
+    "prefecture": "Milano",
+    "typeOfExam": "Scritto e orale",
+    "teachers": [
+      "Arturo"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/milano/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 3,
+    "createdAt": "2026-01-15T12:40:06.285Z",
+    "updatedAt": "2026-01-15T12:40:06.285Z"
+  },
+  {
+    "title": "Corso per Licenza di Deposito per Mine ed esplosivi della II, III e IV categoria",
+    "category": "In sede",
+    "product": "Mine",
+    "description": "Il corso ci sarà in sede ad ogni completamento della classe, si terranno 2 appuntamenti settimanali di 2 ore ognuno, in questi appuntamenti si avranno dimostrazioni pratiche tramite simulacri e lezioni riguardanti articoli che potrebbero essere chiesti all'esame finale",
+    "duration": 100,
+    "price": 2000,
+    "isAvailable": false,
+    "prefecture": "Rome",
+    "typeOfExam": "Scritto e orale",
+    "teachers": [
+      "Mariano",
+      "Arturo"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/roma/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 4,
+    "createdAt": "2026-01-15T12:40:15.946Z",
+    "updatedAt": "2026-01-15T12:40:15.946Z"
+  },
+  {
+    "title": "Corso per Licenza di Accensione di Fuochi artificiali della IV e V categoria",
+    "category": "In sede",
+    "product": "Fuochi artificiali",
+    "description": "Il corso ci sarà in sede ad ogni completamento della classe, si terranno 2 appuntamenti settimanali di 2 ore ognuno, in questi appuntamenti si avranno dimostrazioni pratiche tramite simulacri e lezioni riguardanti articoli che potrebbero essere chiesti all'esame finale",
+    "duration": 50,
+    "price": 2000,
+    "isAvailable": true,
+    "prefecture": "Rome",
+    "typeOfExam": "Pratico e orale",
+    "teachers": [
+      "Mariano",
+      "Arturo"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/roma/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 5,
+    "createdAt": "2026-01-15T12:40:24.944Z",
+    "updatedAt": "2026-01-15T12:40:24.944Z"
+  },
+  {
+    "title": "Corso per Licenza di Accensione di Mine ed esplosivi della II, III e IV categoria",
+    "category": "In sede",
+    "product": "Mine",
+    "description": "Il corso ci sarà in sede ad ogni completamento della classe, si terranno 2 appuntamenti settimanali di 2 ore ognuno, in questi appuntamenti si avranno dimostrazioni pratiche tramite simulacri e lezioni riguardanti articoli che potrebbero essere chiesti all'esame finale",
+    "duration": 100,
+    "price": 2500,
+    "isAvailable": true,
+    "prefecture": "Genova",
+    "typeOfExam": "Pratico e orale",
+    "teachers": [
+      "Vittorio",
+      "Mariano"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/genova/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 6,
+    "createdAt": "2026-01-15T12:40:34.310Z",
+    "updatedAt": "2026-01-15T12:40:34.310Z"
+  },
+  {
+    "title": "Corso per Licenza di Fabbricazione di Fuochi artificiali della IV e V categoria",
+    "category": "In sede",
+    "product": "Fuochi artificiali",
+    "description": "Il corso ci sarà in sede ad ogni completamento della classe, si terranno 2 appuntamenti settimanali di 2 ore ognuno, in questi appuntamenti si avranno dimostrazioni pratiche tramite simulacri e lezioni riguardanti articoli che potrebbero essere chiesti all'esame finale",
+    "duration": 100,
+    "price": 1500,
+    "isAvailable": true,
+    "prefecture": "Roma",
+    "typeOfExam": "Pratico e orale",
+    "teachers": [
+      "Arturo"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/roma/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 7,
+    "createdAt": "2026-01-15T12:40:45.357Z",
+    "updatedAt": "2026-01-15T12:40:45.357Z"
+  },
+  {
+    "title": "Corso per Licenza di Fabbricazione di Mine ed esplosivi della II e III categoria",
+    "category": "In sede",
+    "product": "Mine",
+    "description": "Il corso ci sarà in sede ad ogni completamento della classe, si terranno 2 appuntamenti settimanali di 2 ore ognuno, in questi appuntamenti si avranno dimostrazioni pratiche tramite simulacri e lezioni riguardanti articoli che potrebbero essere chiesti all'esame finale",
+    "duration": 150,
+    "price": 3000,
+    "isAvailable": false,
+    "prefecture": "Milano",
+    "typeOfExam": "Pratico e orale",
+    "teachers": [
+      "Mariano"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/milano/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 8,
+    "createdAt": "2026-01-15T12:40:54.376Z",
+    "updatedAt": "2026-01-15T12:40:54.376Z"
+  },
+  {
+    "title": "Corso per Licenza per Porto d'armi, per uso Sportivo, di Caccia o Difesa personale",
+    "category": "Online",
+    "product": "Armi",
+    "description": "Corso che viene effettuato online tramite piattaforme di videochiamata. Il corso tratterà degli argomenti che occorrono per poter sostenere l'esame finale in prefettura, l'alunno verrà fornito di tutto il materiale necessario per poter studiare anche autonomamente oltre alle lezioni. Il corso si terrà 3 volte a settimana in accordi con il cliente, tramite appuntamenti di circa 1 ora, nella quale si affronteranno i vari argomenti, si faranno dei quiz ed eventuali dimostrazioni.",
+    "duration": 150,
+    "price": 3000,
+    "isAvailable": false,
+    "prefecture": "Milano",
+    "typeOfExam": "Orale",
+    "teachers": [
+      "Vittorio"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/milano/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 9,
+    "createdAt": "2026-01-15T12:41:05.761Z",
+    "updatedAt": "2026-01-15T12:41:05.761Z"
+  },
+  {
+    "title": "Corso per Patente ADR",
+    "category": "Online",
+    "product": "ADR",
+    "description": "Corso che viene effettuato online tramite piattaforme di videochiamata. Il corso tratterà degli argomenti che occorrono per poter sostenere l'esame finale in prefettura, l'alunno verrà fornito di tutto il materiale necessario per poter studiare anche autonomamente oltre alle lezioni. Il corso si terrà 3 volte a settimana in accordi con il cliente, tramite appuntamenti di circa 1 ora, nella quale si affronteranno i vari argomenti, si faranno dei quiz ed eventuali dimostrazioni.",
+    "duration": 150,
+    "price": 500,
+    "isAvailable": true,
+    "prefecture": "Genova",
+    "typeOfExam": "Orale",
+    "teachers": [
+      "Mariano",
+      "Vittorio",
+      "Arturo"
+    ],
+    "prefectureUrl": "https://prefettura.interno.gov.it/it/prefetture/genova/commissione-tecnica-territoriale-materia-sostanze-esplodenti",
+    "id": 10,
+    "createdAt": "2026-01-15T12:41:13.923Z",
+    "updatedAt": "2026-01-15T12:41:13.923Z"
+  }
+]
