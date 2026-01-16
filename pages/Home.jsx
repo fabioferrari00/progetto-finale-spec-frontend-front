@@ -2,7 +2,7 @@ import Jumbotron from "../components/Jumbotron"
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-lg-blue">
       <Jumbotron />
       Home
     </div>
