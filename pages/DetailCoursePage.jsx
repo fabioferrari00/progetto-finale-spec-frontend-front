@@ -27,7 +27,7 @@ const DetailCoursePage = () => {
           <div className="col-12 text-center py-5">
             <a href={course.prefectureUrl}>Clicca qui per leggere il bando sul sito ufficiale della prefettura</a>
           </div>
-          <ul className="details-list">
+          <ul className="details-list mb-5">
             <li>
               <strong>Categoria: </strong><span>{course.category}</span>
             </li>

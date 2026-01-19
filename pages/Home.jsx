@@ -40,41 +40,37 @@ const Home = () => {
       <Jumbotron />
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <div className="row">
-              <div className="col-12 col-md-6 my-3">
-                <input
-                  className="s-input form-control"
-                  type="text"
-                  placeholder="Cerca..."
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                />
-              </div>
-              <div className="col-12 col-md-4 my-3">
-                <select
-                  className="s-input form-control"
-                  value={category}
-                  onChange={(e) => setCategory(e.target.value)}>
-                  <option value="all">Tutte le categorie</option>
-                  <option value="Fuochi artificiali">Fuochi artificiali</option>
-                  <option value="Armi">Armi</option>
-                  <option value="Mine">Mine</option>
-                  <option value="ADR">ADR</option>
-                </select>
-              </div>
-              <div className="col-12 col-md-2 my-3">
-                <select
-                  className="s-input form-control"
-                  value={alphabeticOrder}
-                  onChange={(e) => setAlphabeticOrder(e.target.value)}
-                >
-                  <option value="">Ordina per titolo</option>
-                  <option value="az">Dalla A alla Z</option>
-                  <option value="za">Dalla Z alla A</option>
-                </select>
-              </div>
-            </div>
+          <div className="col-12 col-md-6 mt-5">
+            <input
+              className="s-input form-control"
+              type="text"
+              placeholder="Cerca..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
+          <div className="col-12 col-md-4 mt-5">
+            <select
+              className="s-input form-control"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}>
+              <option value="all">Tutte le categorie</option>
+              <option value="Fuochi artificiali">Fuochi artificiali</option>
+              <option value="Armi">Armi</option>
+              <option value="Mine">Mine</option>
+              <option value="ADR">ADR</option>
+            </select>
+          </div>
+          <div className="col-12 col-md-2 mt-5">
+            <select
+              className="s-input form-control"
+              value={alphabeticOrder}
+              onChange={(e) => setAlphabeticOrder(e.target.value)}
+            >
+              <option value="">Ordina per titolo</option>
+              <option value="az">Dalla A alla Z</option>
+              <option value="za">Dalla Z alla A</option>
+            </select>
           </div>
           {filteredCourse.map((course) => {
             return (
