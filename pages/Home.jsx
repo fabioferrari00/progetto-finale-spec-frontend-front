@@ -1,6 +1,7 @@
 import Jumbotron from "../components/Jumbotron"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import CourseCard from "../components/CourseCard"
 
 const Home = () => {
 
@@ -19,27 +20,12 @@ const Home = () => {
       <div className="container">
         <div className="row">
           {courses.map((course) => {
-          
-          return(
-            <>
-              <div className="col-6" key={course.id}>
-                <div class="course-card">
-                    <div class="course-card-header">
-                      {course.title}
-                    </div>
-                    <div class="course-card-body py-4">
-                      <figure>
-                        <blockquote class="blockquote">
-                          <p>{course.description}</p>
-                        </blockquote>
-                        <figcaption class="blockquote-footer"><cite title="Source Title">{course.category}</cite>
-                        </figcaption>
-                      </figure>
-                    </div>
-                  </div>
-              </div>
-            </>
-          )})}
+            return (
+              <>
+                <CourseCard course={course} />
+              </>
+            )
+          })}
 
         </div>
       </div>
