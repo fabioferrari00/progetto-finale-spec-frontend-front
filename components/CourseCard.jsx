@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const CourseCard = ({ course }) => {
   return (
     <>
-      <div className="col-6" key={course.id}>
+      <div className="col-6 mb-4" key={course.id}>
         <div className="course-card" >
           <Link to={`/courses/${course.id}`} className='card-link'>
             <div className="course-card-header" >
