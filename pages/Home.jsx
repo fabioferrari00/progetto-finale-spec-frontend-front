@@ -17,6 +17,7 @@ const Home = () => {
         .includes(search.toLowerCase());
 
       const courseCategory = category === "all" || course.category === category;
+      console.log('ciao')
 
       return courseTitle && courseCategory;
     });
@@ -24,7 +25,7 @@ const Home = () => {
     return filtered.sort((a, b) => {
       if (alphabeticOrder === "az") return a.title.localeCompare(b.title);
       if (alphabeticOrder === "za") return b.title.localeCompare(a.title);
-      return 0;
+      return null;
     });
   }, [courses, search, category, alphabeticOrder]);
 

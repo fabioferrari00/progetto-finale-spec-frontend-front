@@ -5,10 +5,10 @@ const Footer = () => {
       <div className='container'>
         <div className="row">
           <div className="col-6">
-            <div class="social-icons py-5">
-              <i class="fab fa-facebook-f me-3"></i>
-              <i class="fab fa-instagram me-3"></i>
-              <i class="fab fa-whatsapp me-3"></i>
+            <div className="social-icons py-5">
+              <i className="fab fa-facebook-f me-3"></i>
+              <i className="fab fa-instagram me-3"></i>
+              <i className="fab fa-whatsapp me-3"></i>
             </div>
           </div>
           <div className="col-6 footer-description py-5">
