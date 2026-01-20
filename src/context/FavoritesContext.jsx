@@ -1,42 +1,44 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useEffect, useMemo } from "react";
 
-const FavoritesContext = createContext();
+export const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState(() => {
-    try {
-      const saved = localStorage.getItem("favorites");
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
+    const stored = localStorage.getItem("favorites");
+    return stored ? JSON.parse(stored) : [];
   });
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
-  const toggleFavorite = (courseId) => {
-    const id = Number(courseId);
-    setFavorites((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    );
+  const toggleFavorite = (course) => {
+    setFavorites((prev) => {
+      const exists = prev.some((c) => c.id === course.id);
+      if (exists) {
+        return prev.filter((c) => c.id !== course.id);
+      }
+      return [...prev, course];
+    });
   };
 
-  const removeFromFavorites = (productId) => {
-    setFavorites((prev) => prev.filter((prod) => prod.id !== productId));
+  const removeFromFavorites = (courseId) => {
+    setFavorites((prev) => prev.filter((c) => c.id !== courseId));
   };
 
-  const isFavorite = (courseId) => {
-    return favorites.includes(Number(courseId));
+  const isFavorite = (productId) => {
+    return favorites.some((p) => p.id === productId);
   };
 
+
+  const value = useMemo(
+    () => ({ favorites, toggleFavorite, isFavorite, removeFromFavorites }),
+    [favorites]
+  );
 
   return (
-    <FavoritesContext.Provider value={{ favorites, toggleFavorite, isFavorite, removeFromFavorites }}>
+    <FavoritesContext.Provider value={value}>
       {children}
     </FavoritesContext.Provider>
   );
 };
-
-export const useFavorites = () => useContext(FavoritesContext);

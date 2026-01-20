@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { memo, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { useFavorites } from '../context/FavoritesContext'
+import { FavoritesContext } from '../context/FavoritesContext'
 
 
-const CourseCard = ({ course }) => {
+const CourseCard = memo(({ course }) => {
 
-  const { isFavorite, toggleFavorite } = useFavorites();
-
-  const favorite = isFavorite(Number(course.id));
+  const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
+  const favorite = isFavorite(course.id);
 
 
   return (
@@ -25,7 +24,7 @@ const CourseCard = ({ course }) => {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  toggleFavorite(Number(course.id));
+                  toggleFavorite(course);
                 }}
                 className="favorite-btn"
               >
@@ -35,12 +34,11 @@ const CourseCard = ({ course }) => {
                 ></i>
               </button>
             </div>
-
           </div>
         </div>
       </div>
     </>
   )
-}
+})
 
 export default CourseCard

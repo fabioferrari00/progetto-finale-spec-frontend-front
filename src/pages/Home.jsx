@@ -1,8 +1,8 @@
 import Jumbotron from "../components/Jumbotron"
-import { useState, useEffect, useMemo } from "react"
+import { useState, useEffect, useMemo, useContext } from "react"
 import axios from "axios"
 import CourseCard from "../components/CourseCard"
-import { useFavorites } from "../context/FavoritesContext"
+import { FavoritesContext } from "../context/FavoritesContext"
 
 const Home = () => {
 
@@ -11,7 +11,7 @@ const Home = () => {
   const [category, setCategory] = useState("all");
   const [alphabeticOrder, setAlphabeticOrder] = useState("");
 
-  const { favorites, toggleFavorite } = useFavorites();
+  const { favorites, toggleFavorite } = useContext(FavoritesContext);
 
   const isFavorite = (id) => favorites.includes(id);
 
