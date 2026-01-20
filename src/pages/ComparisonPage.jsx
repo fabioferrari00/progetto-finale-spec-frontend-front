@@ -7,7 +7,7 @@ const ComparisonPage = () => {
   if (comparison.length === 0) {
     return (
       <div className="container py-5 text-center">
-        <h3>Nessun prodotto da comparare</h3>
+        <h3>Nessun prodotto da confrontare</h3>
         <p>Seleziona due corsi dalla home per confrontarli.</p>
         <Link to="/" className="btn btn-primary mt-3">Vai alla home</Link>
       </div>
@@ -24,12 +24,9 @@ const ComparisonPage = () => {
             <div className="card p-3">
               <h5>{course.title}</h5>
               <p>{course.category}</p>
-              <p>Durata: {course.duration} ore</p>
-              <p>Prezzo: €{course.price}</p>
               <button
                 className="btn btn-sm btn-outline-danger"
-                onClick={() => removeFromComparison(course.id)}
-              >
+                onClick={() => removeFromComparison(course.id)}>
                 Rimuovi
               </button>
             </div>

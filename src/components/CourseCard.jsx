@@ -13,8 +13,6 @@ const CourseCard = memo(({ course }) => {
   const inComparison = isInComparison(course.id);
 
 
-
-
   return (
     <>
       <div className="col-6 mb-4" key={course.id}>

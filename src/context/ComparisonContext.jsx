@@ -16,30 +16,30 @@ export const ComparisonProvider = ({ children }) => {
     localStorage.setItem("comparison", JSON.stringify(comparison));
   }, [comparison]);
 
-  const addToComparison = (course) => {
+  const addToComparison = (product) => {
     setComparison((prev) => {
-      if (prev.some((c) => c.id === course.id)) return prev;
+      if (prev.some((p) => p.id === product.id)) return prev;
 
-      if (prev.length >= 3) {
+      if (prev.length >= 2) {
         return prev;
       }
-      return [...prev, course];
+      return [...prev, product];
     });
   };
 
 
-  const removeFromComparison = (courseId) => {
-    setComparison((prev) => prev.filter((c) => c.id !== courseId));
+  const removeFromComparison = (productId) => {
+    setComparison((prev) => prev.filter((p) => p.id !== productId));
   };
 
-  const toggleComparison = (course) => {
-    const exists = comparison.some((c) => c.id === course.id);
-    if (exists) return removeFromComparison(course.id);
-    return addToComparison(course);
+  const toggleComparison = (product) => {
+    const exists = comparison.some((p) => p.id === product.id);
+    if (exists) return removeFromComparison(product.id);
+    return addToComparison(product);
   };
 
-  const isInComparison = (courseId) => {
-    return comparison.some((c) => c.id === courseId);
+  const isInComparison = (productId) => {
+    return comparison.some((p) => p.id === productId);
   };
 
   const clearComparison = () => setComparison([]);
@@ -52,7 +52,7 @@ export const ComparisonProvider = ({ children }) => {
         removeFromComparison,
         toggleComparison,
         isInComparison,
-        clearComparison,
+        clearComparison
       }}
     >
       {children}
