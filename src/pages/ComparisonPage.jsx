@@ -9,7 +9,7 @@ const ComparisonPage = () => {
       <div className="container py-5 text-center">
         <h3>Nessun prodotto da confrontare</h3>
         <p>Seleziona due corsi dalla home per confrontarli.</p>
-        <Link to="/" className="btn btn-primary mt-3">Vai alla home</Link>
+        <Link to="/" className="home-btn mt-3">Vai alla home</Link>
       </div>
     );
   }

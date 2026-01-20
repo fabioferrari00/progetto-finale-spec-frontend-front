@@ -1,22 +1,45 @@
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { FavoritesContext } from "../context/FavoritesContext";
 
 const DetailCoursePage = () => {
   const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
+  const navigate = useNavigate();
 
   const { id } = useParams();
   const [course, setCourse] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/courses/${id}`).then((res) => setCourse(res.data.course)).catch((err) => console.error(err));
-  }, [id])
+    axios
+      .get(`http://localhost:3001/courses/${id}`)
+      .then((res) => {
+        if (!res.data.course) {
+          navigate("/not-found", { replace: true });
+          return;
+        }
+        setCourse(res.data.course);
+      })
+      .catch((err) => {
+        navigate("/not-found", { replace: true });
+      });
+  }, [id, navigate]);
 
   if (!course) return <div className="text-center py-20">Caricamento corso...</div>;
 
   const favorite = isFavorite(course.id);
-  console.log(favorite)
+
+  const courseId = Number(id);
+
+  const goPrev = () => {
+    if (courseId > 1) {
+      navigate(`/courses/${courseId - 1}`);
+    }
+  };
+
+  const goNext = () => {
+    navigate(`/courses/${courseId + 1}`);
+  };
 
   return (
     <div className="">
@@ -80,6 +103,19 @@ const DetailCoursePage = () => {
               </div>
             </li>
           </ul>
+          <div className="d-flex justify-content-center gap-5 my-4">
+            <button
+              className="pagination-btn fs-3"
+              onClick={goPrev}
+              disabled={courseId === 1}
+            >
+              <i className="fa-solid fa-angle-left"></i>
+            </button>
+
+            <button className="pagination-btn fs-3" onClick={goNext} disabled={courseId === 10}>
+              <i className="fa-solid fa-angle-right"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>

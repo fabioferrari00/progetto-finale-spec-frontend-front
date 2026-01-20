@@ -129,15 +129,31 @@ header a {
   transition: color 0.2s ease, transform 0.15s ease;
 }
 
-/* quando è nei preferiti */
 .favorite-btn i.fa-star.is-favorite {
   color: gold;
 }
 
-/* hover */
 .favorite-btn:hover i.fa-star {
   transform: scale(1.2);
   color: #f5c542;
+}
+
+.pagination-btn {
+  background-color: #004782;
+  padding: 20px;
+  color: white;
+  border-radius: 50%;
+}
+
+.home-btn {
+  background-color: #004782;
+  padding: 10px 25px;
+  text-decoration: none;
+  color: white;
+}
+
+.home-btn:hover {
+  background-color: #003c6d;
 }
 
 

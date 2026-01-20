@@ -44,7 +44,7 @@ const FavoritesPage = () => {
                     >
                     </button>
                     <button
-                      className="add-to-list fs-5"
+                      className="pagination-btn fs-5"
                       onClick={() => {
                         const confirmed = window.confirm(
                           "Sei sicuro di voler rimuovere questo prodotto dai preferiti?"

@@ -16,30 +16,30 @@ export const ComparisonProvider = ({ children }) => {
     localStorage.setItem("comparison", JSON.stringify(comparison));
   }, [comparison]);
 
-  const addToComparison = (product) => {
+  const addToComparison = (course) => {
     setComparison((prev) => {
-      if (prev.some((p) => p.id === product.id)) return prev;
+      if (prev.some((c) => c.id === course.id)) return prev;
 
       if (prev.length >= 2) {
         return prev;
       }
-      return [...prev, product];
+      return [...prev, course];
     });
   };
 
 
-  const removeFromComparison = (productId) => {
-    setComparison((prev) => prev.filter((p) => p.id !== productId));
+  const removeFromComparison = (courseId) => {
+    setComparison((prev) => prev.filter((c) => c.id !== courseId));
   };
 
-  const toggleComparison = (product) => {
-    const exists = comparison.some((p) => p.id === product.id);
-    if (exists) return removeFromComparison(product.id);
-    return addToComparison(product);
+  const toggleComparison = (course) => {
+    const exists = comparison.some((c) => c.id === course.id);
+    if (exists) return removeFromComparison(course.id);
+    return addToComparison(course);
   };
 
-  const isInComparison = (productId) => {
-    return comparison.some((p) => p.id === productId);
+  const isInComparison = (courseId) => {
+    return comparison.some((c) => c.id === courseId);
   };
 
   const clearComparison = () => setComparison([]);

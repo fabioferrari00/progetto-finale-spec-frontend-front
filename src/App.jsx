@@ -6,6 +6,7 @@ import FavoritesPage from "./pages/FavoritesPage";
 import ComparisonPage from "./pages/ComparisonPage";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import { ComparisonProvider } from "./context/ComparisonContext";
+import NotFoundPage from "./pages/NotFoundPage";
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
                 <Route path="/courses/:id" element={<DetailCoursePage />}></Route>
                 <Route path="/comparison" element={<ComparisonPage />}></Route>
                 <Route path="/favorites" element={<FavoritesPage />}></Route>
+                <Route path="/not-found" element={<NotFoundPage />} />
+                <Route path="*" element={<NotFoundPage />} />
               </Route>
             </Routes>
           </BrowserRouter>
