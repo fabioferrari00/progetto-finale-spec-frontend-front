@@ -26,8 +26,8 @@ export const FavoritesProvider = ({ children }) => {
     setFavorites((prev) => prev.filter((c) => c.id !== courseId));
   };
 
-  const isFavorite = (productId) => {
-    return favorites.some((p) => p.id === productId);
+  const isFavorite = (courseId) => {
+    return favorites.some((c) => c.id === courseId);
   };
 
 

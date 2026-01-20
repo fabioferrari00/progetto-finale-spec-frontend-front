@@ -1,14 +1,13 @@
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom"
+import { FavoritesContext } from "../context/FavoritesContext";
 
 const DetailCoursePage = () => {
+  const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
 
   const { id } = useParams();
   const [course, setCourse] = useState(null);
-
-
-
 
   useEffect(() => {
     axios.get(`http://localhost:3001/courses/${id}`).then((res) => setCourse(res.data.course)).catch((err) => console.error(err));
@@ -16,12 +15,30 @@ const DetailCoursePage = () => {
 
   if (!course) return <div className="text-center py-20">Caricamento corso...</div>;
 
+  const favorite = isFavorite(course.id);
+  console.log(favorite)
+
   return (
     <div className="">
       <div className="container">
         <div className="row">
           <div className="col-12 course-title">
             <p>{course.title}</p>
+            <div className="text-end mx-3">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleFavorite(course);
+                  ;
+                }}
+                className="favorite-btn"
+              >
+                <i
+                  className={`fa-star ${favorite ? "fa-solid is-favorite" : "fa-regular"
+                    }`}
+                ></i>
+              </button>
+            </div>
           </div>
           <div className="col-12 course-description">
             <p>{course.description}</p>
