@@ -2,6 +2,7 @@ import Jumbotron from "../components/Jumbotron"
 import { useState, useEffect, useMemo } from "react"
 import axios from "axios"
 import CourseCard from "../components/CourseCard"
+import { useFavorites } from "../context/FavoritesContext"
 
 const Home = () => {
 
@@ -9,6 +10,12 @@ const Home = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [alphabeticOrder, setAlphabeticOrder] = useState("");
+
+  const { favorites, toggleFavorite } = useFavorites();
+
+  const isFavorite = (id) => favorites.includes(id);
+
+
 
   const filteredCourse = useMemo(() => {
     const filtered = courses.filter((course) => {
@@ -76,7 +83,7 @@ const Home = () => {
           {filteredCourse.map((course) => {
             return (
               <>
-                <CourseCard course={course} />
+                <CourseCard key={course.id} course={course} toggleFavorite={toggleFavorite} isFavorite={favorites.includes(course.id)} />
               </>
             )
           })}

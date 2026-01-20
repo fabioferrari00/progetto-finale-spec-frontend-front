@@ -116,6 +116,31 @@ header a {
   font-size: 2rem;
 }
 
+.favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.favorite-btn i.fa-star {
+  font-size: 1.6rem;
+  color: #b5b5b5;
+  transition: color 0.2s ease, transform 0.15s ease;
+}
+
+/* quando è nei preferiti */
+.favorite-btn i.fa-star.is-favorite {
+  color: gold;
+}
+
+/* hover */
+.favorite-btn:hover i.fa-star {
+  transform: scale(1.2);
+  color: #f5c542;
+}
+
+
 /* utility */
 .bg-blue {
   background-color: #004782;

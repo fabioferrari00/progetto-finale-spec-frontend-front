@@ -1,11 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom"
 
 const DetailCoursePage = () => {
 
   const { id } = useParams();
   const [course, setCourse] = useState(null);
+
+
 
 
   useEffect(() => {
