@@ -1,12 +1,12 @@
 import React, { memo, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { FavoritesContext } from '../context/FavoritesContext'
+import { useFavorites } from '../context/FavoritesContext'
 import { useComparison } from '../context/ComparisonContext'
 
 
 const CourseCard = memo(({ course }) => {
 
-  const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
+  const { toggleFavorite, isFavorite } = useFavorites();
   const { toggleComparison, isInComparison } = useComparison();
 
   const favorite = isFavorite(course.id);

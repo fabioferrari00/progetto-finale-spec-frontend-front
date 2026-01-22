@@ -1,6 +1,6 @@
-import { createContext, useState, useEffect, useMemo } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
-export const FavoritesContext = createContext();
+const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
   const [favorites, setFavorites] = useState(() => {
@@ -8,37 +8,51 @@ export const FavoritesProvider = ({ children }) => {
     return stored ? JSON.parse(stored) : [];
   });
 
+  // salva su localStorage
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
   }, [favorites]);
 
+  const addFavorite = (course) => {
+    setFavorites((prev) => [...prev, course]);
+  };
+
+  const removeFavorite = (id) => {
+    setFavorites((prev) => prev.filter((course) => course.id !== id));
+  };
+
   const toggleFavorite = (course) => {
     setFavorites((prev) => {
       const exists = prev.some((c) => c.id === course.id);
-      if (exists) {
-        return prev.filter((c) => c.id !== course.id);
-      }
-      return [...prev, course];
+      return exists
+        ? prev.filter((c) => c.id !== course.id)
+        : [...prev, course];
     });
   };
 
-  const removeFromFavorites = (courseId) => {
-    setFavorites((prev) => prev.filter((c) => c.id !== courseId));
+  const isFavorite = (id) => {
+    return favorites.some((course) => course.id === id);
   };
-
-  const isFavorite = (courseId) => {
-    return favorites.some((c) => c.id === courseId);
-  };
-
-
-  const value = useMemo(
-    () => ({ favorites, toggleFavorite, isFavorite, removeFromFavorites }),
-    [favorites]
-  );
 
   return (
-    <FavoritesContext.Provider value={value}>
+    <FavoritesContext.Provider
+      value={{
+        favorites,
+        addFavorite,
+        removeFavorite,
+        toggleFavorite,
+        isFavorite,
+      }}
+    >
       {children}
     </FavoritesContext.Provider>
   );
+};
+
+export const useFavorites = () => {
+  const context = useContext(FavoritesContext);
+  if (!context) {
+    throw new Error("useFavorites must be used within a FavoritesProvider");
+  }
+  return context;
 };

@@ -1,21 +1,15 @@
 import Jumbotron from "../components/Jumbotron"
-import { useState, useEffect, useMemo, useContext } from "react"
-import axios from "axios"
+import { useState, useMemo } from "react"
 import CourseCard from "../components/CourseCard"
-import { FavoritesContext } from "../context/FavoritesContext"
+import { useCourses } from "../context/CoursesContext";
 
 const Home = () => {
 
-  const [courses, setCourses] = useState([])
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const [alphabeticOrder, setAlphabeticOrder] = useState("");
 
-  const { favorites, toggleFavorite } = useContext(FavoritesContext);
-
-  const isFavorite = (id) => favorites.includes(id);
-
-
+  const { courses, loading } = useCourses();
 
   const filteredCourse = useMemo(() => {
     const filtered = courses.filter((course) => {
@@ -36,12 +30,7 @@ const Home = () => {
     });
   }, [courses, search, category, alphabeticOrder]);
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/courses")
-      .then((res) => setCourses(res.data))
-      .catch((error) => console.error(error));
-  }, []);
+  if (loading) return <p>Caricamento...</p>;
 
   return (
     <div className="bg-lg-blue">
@@ -83,7 +72,7 @@ const Home = () => {
           {filteredCourse.map((course) => {
             return (
               <>
-                <CourseCard key={course.id} course={course} toggleFavorite={toggleFavorite} isFavorite={favorites.includes(course.id)} />
+                <CourseCard key={course.id} course={course} />
               </>
             )
           })}

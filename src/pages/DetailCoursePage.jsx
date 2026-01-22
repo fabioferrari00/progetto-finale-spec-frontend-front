@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom"
-import { FavoritesContext } from "../context/FavoritesContext";
+import { useFavorites } from "../context/FavoritesContext";
 
 const DetailCoursePage = () => {
-  const { toggleFavorite, isFavorite } = useContext(FavoritesContext);
+  const { toggleFavorite, isFavorite } = useFavorites();
   const navigate = useNavigate();
 
   const { id } = useParams();

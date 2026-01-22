@@ -1,10 +1,9 @@
-import { useContext } from "react"
-import { FavoritesContext } from "../context/FavoritesContext";
+import { useFavorites } from "../context/FavoritesContext";
 import { Link } from "react-router-dom";
 
 const FavoritesPage = () => {
 
-  const { favorites, removeFromFavorites } = useContext(FavoritesContext);
+  const { favorites, removeFavorite } = useFavorites();
 
   if (favorites.length === 0) {
     return (
@@ -51,7 +50,7 @@ const FavoritesPage = () => {
                         );
 
                         if (confirmed) {
-                          removeFromFavorites(course.id);
+                          removeFavorite(course.id);
                         }
                       }}
                     >

@@ -3,14 +3,14 @@ export type Course = {
   title: string,
   category: string,
 
-  product?: string,
-  description?: string,
-  duration?: number,
-  price?: number,
-  isAvailable?: boolean,
-  prefecture?: string,
-  typeOfExam?: string,
-  teachers?: string[],
+  typeOfCourse: string,
+  description: string,
+  duration: number,
+  price: number,
+  isAvailable: boolean,
+  prefecture: string,
+  typeOfExam: string,
+  teachers: string[],
 
-  readonly prefectureUrl?: string,
+  readonly prefectureUrl: string,
 }
