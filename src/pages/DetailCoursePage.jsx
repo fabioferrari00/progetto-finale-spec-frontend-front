@@ -1,30 +1,30 @@
-import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
 import { useFavorites } from "../context/FavoritesContext";
 
 const DetailCoursePage = () => {
   const { toggleFavorite, isFavorite } = useFavorites();
+  const [course, setCourse] = useState(null);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   const { id } = useParams();
-  const [course, setCourse] = useState(null);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:3001/courses/${id}`)
-      .then((res) => {
-        if (!res.data.course) {
-          navigate("/not-found", { replace: true });
-          return;
-        }
-        setCourse(res.data.course);
-      })
-      .catch((err) => {
-        navigate("/not-found", { replace: true });
-      });
+    const fetchCourse = async () => {
+      try {
+        const response = await fetch(`http://localhost:3001/courses/${id}`);
+        if (!response.ok) throw new Error("Course not found");
+        const data = await response.json();
+        setCourse(data.course);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+    fetchCourse();
   }, [id, navigate]);
 
+  if (error) return <div className="text-center py-20 text-red-500">Error: {error}</div>;
   if (!course) return <div className="text-center py-20">Caricamento corso...</div>;
 
   const favorite = isFavorite(course.id);
