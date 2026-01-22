@@ -38,8 +38,8 @@ export const ComparisonProvider = ({ children }) => {
     return addToComparison(course);
   };
 
-  const isInComparison = (courseId) => {
-    return comparison.some((c) => c.id === courseId);
+  const isComparison = (id) => {
+    return comparison.some((course) => course.id === id);
   };
 
   const clearComparison = () => setComparison([]);
@@ -51,7 +51,7 @@ export const ComparisonProvider = ({ children }) => {
         addToComparison,
         removeFromComparison,
         toggleComparison,
-        isInComparison,
+        isComparison,
         clearComparison
       }}
     >

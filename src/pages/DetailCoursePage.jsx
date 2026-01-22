@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
 import { useFavorites } from "../context/FavoritesContext";
+import { useComparison } from '../context/ComparisonContext'
 
 const DetailCoursePage = () => {
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { toggleComparison, isComparison } = useComparison();
+
   const [course, setCourse] = useState(null);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
@@ -22,7 +25,10 @@ const DetailCoursePage = () => {
       }
     };
     fetchCourse();
+
   }, [id, navigate]);
+
+  const inComparison = isComparison(id);
 
   if (error) return <div className="text-center py-20 text-red-500">Error: {error}</div>;
   if (!course) return <div className="text-center py-20">Caricamento corso...</div>;
@@ -48,6 +54,16 @@ const DetailCoursePage = () => {
           <div className="col-12 course-title">
             <p>{course.title}</p>
             <div className="text-end mx-3">
+              <button
+                className={`btn btn-sm ms-2 ${inComparison ? "btn-success" : "btn-outline-secondary"
+                  }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleComparison(course);
+                }}
+              >
+                {inComparison ? "✓ Confronta" : "Confronta"}
+              </button>
               <button
                 onClick={(e) => {
                   e.preventDefault();
