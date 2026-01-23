@@ -18,59 +18,78 @@ const ComparisonPage = () => {
     <div className="container py-4">
       <h2 className="mb-4">Confronto prodotti</h2>
 
-      <div className="row mb-3">
+      <div className="row g-4">
         {comparison.map((course) => (
-          <div className="col-6" key={course.id}>
-            <div className="card p-3">
-              <h5>{course.title}</h5>
-              <ul className="details-list mb-5">
-                <li>
-                  <strong>Categoria: </strong><span>{course.category}</span>
-                </li>
-                <li>
-                  <strong>Tipo di corso: </strong><span>{course.typeOfCourse}</span>
-                </li>
-                <li>
-                  <strong>Durata: </strong><span>{course.duration} ore</span>
-                </li>
-                <li>
-                  <strong>{course.isAvailable ? "Disponibile" : "Non disponibile al momento"}
-                  </strong>
-                </li>
-                <li>
-                  <strong>Prefettura d'esame: </strong><span>{course.prefecture}</span>
-                </li>
-                <li>
-                  <strong>Tipo di esame: </strong><span>{course.typeOfExam}</span>
-                </li>
-                <li>
-                  <strong>Prezzo: </strong><span>€ {course.price}</span>
-                </li>
-                <li>
-                  <strong>Docenti del corso: </strong>
-                  <div>
+          <div className="col-12 col-md-6" key={course.id}>
+            <div className="card h-100 shadow-sm border-0">
+
+              {/* Header */}
+              <div className="card-header bg-light">
+                <h5 className="mb-0 fw-semibold">{course.title}</h5>
+              </div>
+
+              {/* Body */}
+              <div className="card-body d-flex flex-column">
+                <ul className="list-group list-group-flush mb-3">
+                  <li className="list-group-item">
+                    <strong>Categoria:</strong> {course.category}
+                  </li>
+                  <li className="list-group-item">
+                    <strong>Tipo di corso:</strong> {course.typeOfCourse}
+                  </li>
+                  <li className="list-group-item">
+                    <strong>Durata:</strong> {course.duration} ore
+                  </li>
+                  <li className="list-group-item">
+                    <strong>Prefettura:</strong> {course.prefecture}
+                  </li>
+                  <li className="list-group-item">
+                    <strong>Tipo di esame:</strong> {course.typeOfExam}
+                  </li>
+                  <li className="list-group-item">
+                    <strong>Docenti:</strong>{" "}
                     {course.teachers.map((teacher, index) => (
-                      <span key={index} className="text-slate-600">
-                        {teacher}{index < course.teachers.length - 1 ? ", " : ""}
+                      <span key={index}>
+                        {teacher}
+                        {index < course.teachers.length - 1 && ", "}
                       </span>
                     ))}
-                  </div>
-                </li>
-              </ul>
-              <button
-                className="btn btn-sm btn-outline-danger"
-                onClick={() => removeFromComparison(course.id)}>
-                Rimuovi
-              </button>
+                  </li>
+                </ul>
+
+                {/* Disponibilità + Prezzo */}
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <span
+                    className={`badge ${course.isAvailable ? "bg-success" : "bg-secondary"
+                      }`}>
+                    {course.isAvailable ? "Disponibile" : "Non disponibile"}
+                  </span>
+
+                  <span className="fs-5 fw-bold text-primary">
+                    € {course.price}
+                  </span>
+                </div>
+
+                {/* CTA */}
+                <button
+                  className="btn btn-outline-danger btn-sm mt-auto"
+                  onClick={() => removeFromComparison(course.id)}
+                >
+                  Rimuovi dal confronto
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      <button className="btn btn-outline-secondary" onClick={clearComparison}>
-        Svuota confronto
-      </button>
+      <div className="text-end mt-4">
+        <button className="btn btn-outline-secondary" onClick={clearComparison}>
+          Svuota confronto
+        </button>
+      </div>
     </div>
+
   );
 };
 

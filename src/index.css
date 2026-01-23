@@ -156,10 +156,19 @@ header a {
   background-color: #003c6d;
 }
 
+.availableBadge {
+  color: white;
+  padding: 15px;
+  border-radius: 20px;
+}
 
 /* utility */
 .bg-blue {
   background-color: #004782;
+}
+
+.bg-green {
+  background-color: green;
 }
 
 .bg-lg-blue {

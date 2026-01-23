@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom"
 import { useFavorites } from "../context/FavoritesContext";
 import { useComparison } from '../context/ComparisonContext'
+import { Link } from "react-router-dom";
 
 const DetailCoursePage = () => {
   const { toggleFavorite, isFavorite } = useFavorites();
@@ -28,14 +29,14 @@ const DetailCoursePage = () => {
 
   }, [id, navigate]);
 
-  const inComparison = isComparison(id);
+  const courseId = Number(id);
+  const inComparison = isComparison(courseId);
 
   if (error) return <div className="text-center py-20 text-red-500">Error: {error}</div>;
   if (!course) return <div className="text-center py-20">Caricamento corso...</div>;
 
   const favorite = isFavorite(course.id);
 
-  const courseId = Number(id);
 
   const goPrev = () => {
     if (courseId > 1) {
@@ -51,6 +52,13 @@ const DetailCoursePage = () => {
     <div className="">
       <div className="container">
         <div className="row">
+          <div className="col-4">
+            <Link to={'/comparison'}>
+              <button className="home-btn mt-4">
+                Vai alla pagina di confronto
+              </button>
+            </Link>
+          </div>
           <div className="col-12 course-title">
             <p>{course.title}</p>
             <div className="text-end mx-3">
@@ -62,7 +70,7 @@ const DetailCoursePage = () => {
                   toggleComparison(course);
                 }}
               >
-                {inComparison ? "✓ Confronta" : "Confronta"}
+                {inComparison ? "✓ In attesa di essere confrontato" : "Confronta con altri corsi"}
               </button>
               <button
                 onClick={(e) => {
@@ -96,7 +104,7 @@ const DetailCoursePage = () => {
               <strong>Durata: </strong><span>{course.duration} ore</span>
             </li>
             <li>
-              <strong>{course.isAvailable ? "Disponibile" : "Non disponibile al momento"}
+              <strong>{course.isAvailable ? "✓ Disponibile" : "✗ Non disponibile al momento"}
               </strong>
             </li>
             <li>
