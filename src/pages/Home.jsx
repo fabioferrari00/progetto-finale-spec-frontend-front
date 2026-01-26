@@ -18,7 +18,6 @@ const Home = () => {
         .includes(search.toLowerCase());
 
       const courseCategory = category === "all" || course.category === category;
-      console.log('ciao')
 
       return courseTitle && courseCategory;
     });

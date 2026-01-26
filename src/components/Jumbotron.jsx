@@ -6,12 +6,12 @@ const Jumbotron = () => {
       <div className="jumbo-bg">
         <div className="container">
           <div className="row d-flex align-items-center">
-            <div className="col-6">
+            <div className="col-6 d-none d-lg-block ">
               <img className="jumbo-img" src="../src/assets/logo.png" alt="" />
             </div>
-            <div className="col-6 bg-jumbo-title">
+            <div className="col-12 col-lg-6 bg-jumbo-title my-5">
               <h2 className="jumbo-title">Cerca il corso giusto per te.</h2>
-              <h2 className="jumbo-title2">Confrontali tra loro e valuta quale fa al caso tuo!</h2> 
+              <h2 className="jumbo-title2">Confrontali tra loro e valuta quale fa al caso tuo!</h2>
             </div>
           </div>
         </div>

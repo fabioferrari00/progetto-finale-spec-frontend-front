@@ -24,7 +24,7 @@ const FavoritesPage = () => {
             <h1 className="fw-bold mb-4 text-center">Preferiti</h1>
           </div>
           {favorites.map((course) => (
-            <div className="col-6 mb-4" key={course.id}>
+            <div className="col-12 col-md-6 mb-4" key={course.id}>
               <div className="course-card" >
                 <Link to={`/courses/${course.id}`} className='card-link'>
                   <div className="course-card-header" >
