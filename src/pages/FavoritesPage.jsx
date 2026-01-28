@@ -14,8 +14,6 @@ const FavoritesPage = () => {
     );
   }
 
-  console.log(favorites)
-
   return (
     <>
       <div className="container my-4">

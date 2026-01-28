@@ -6,7 +6,6 @@ const CoursesContext = createContext();
 export const CoursesProvider = ({ children }) => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCourses = async () => {
@@ -25,7 +24,7 @@ export const CoursesProvider = ({ children }) => {
 
   return (
     <CoursesContext.Provider
-      value={{ courses, loading, error }}
+      value={{ courses, loading }}
     >
       {children}
     </CoursesContext.Provider>
